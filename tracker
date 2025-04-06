@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiley Rein Steel Tariff Tracker | steeltariffs.com</title>
+    <title>Your lawfirm Steel Tariff Tracker | steeltariffs.com</title>
     <style>
         /* Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
@@ -281,10 +281,10 @@
     <header>
         <div class="container logo-bar">
             <div class="logo">
-                <img src="https://www.wiley.law/-/media/images/logos/wiley-rein-logo.png" alt="Wiley Rein Logo">
+                <img src="https://www.yourlawfirm.com/-/media/images/logos/wiley-rein-logo.png" alt="your lawfirm  Logo">
                 <div class="logo-text">
                     <h1>Steel Tariff Tracker</h1>
-                    <p>Powered by Wiley Rein's International Trade Practice</p>
+                    <p>Powered by Your Lawfirm's International Trade Practice</p>
                 </div>
             </div>
             <div>
@@ -297,7 +297,7 @@
         <!-- Alert Banner -->
         <div class="alert-banner">
             <h3>Latest Update: February 11, 2025</h3>
-            <p>President Trump signed new Executive Orders expanding Section 232 tariffs on steel and aluminum. <a href="#">Read Wiley Rein's full analysis →</a></p>
+            <p>President Trump signed new Executive Orders expanding Section 232 tariffs on steel and aluminum. <a href="#">Read your lawfirm's full analysis →</a></p>
         </div>
         
         <!-- Search Box -->
@@ -348,7 +348,7 @@
         <!-- CTA Form -->
         <div class="cta-form">
             <h2>Need Custom Tariff Analysis?</h2>
-            <p>Wiley Rein's trade attorneys provide strategic guidance on Section 232 compliance and exemptions.</p>
+            <p>Your Law firm's trade attorneys provide strategic guidance on Section 232 compliance and exemptions.</p>
             <form>
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -373,8 +373,8 @@
     
     <footer>
         <div class="container">
-            <p>© 2025 Wiley Rein LLP. All rights reserved. | <a href="#" style="color: white;">Privacy Policy</a></p>
-            <p>steeltariffs.com | A Wiley Rein Strategic Resource</p>
+            <p>© 2025 Your Lawfirm LLP. All rights reserved. | <a href="#" style="color: white;">Privacy Policy</a></p>
+            <p>steeltariffs.com | A Your lawfirm Strategic Resource</p>
         </div>
     </footer>
 </body>
