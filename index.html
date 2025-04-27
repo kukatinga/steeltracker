@@ -3,389 +3,796 @@
 <head>
     <link rel="icon" href="icons8-steel-64.png" type="image/png" sizes="64x64">
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T6R9L3FK3C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T6R9L3FK3C');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6R9L3FK3C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T6R9L3FK3C');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your lawfirm Steel Tariff Tracker | steeltariffs.com</title>
+    <title>Steel Tariff Intelligence | Your Law Firm's Trade Practice</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <style>
-        /* Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
-        
-        /* Colors */
         :root {
-            --wiley-blue: #003366;
-            --wiley-red: #CC0000;
-            --wiley-gray: #F5F5F5;
+            --primary: #003366;
+            --secondary: #CC0000;
+            --accent: #FFD700;
+            --light-bg: #F8FAFC;
+            --dark-text: #1E293B;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
         
         body {
             font-family: 'Open Sans', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
             line-height: 1.6;
+            color: var(--dark-text);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary);
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 1.5rem;
         }
         
         /* Header */
         header {
             background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
-        .logo-bar {
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem 0;
         }
         
         .logo {
             display: flex;
             align-items: center;
+            gap: 1rem;
         }
         
         .logo img {
-            height: 40px;
-        }
-        
-        .logo-text {
-            margin-left: 15px;
+            height: 50px;
+            width: auto;
         }
         
         .logo-text h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            color: var(--wiley-blue);
-            margin: 0;
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+            line-height: 1.2;
         }
         
         .logo-text p {
-            font-size: 14px;
-            color: #666;
+            font-size: 0.85rem;
+            color: #64748B;
             margin: 0;
         }
         
-        /* Alert Banner */
-        .alert-banner {
-            background: #FFF8E6;
-            border-left: 4px solid var(--wiley-red);
-            padding: 15px;
-            margin: 20px 0;
-        }
-        
-        .alert-banner h3 {
-            color: var(--wiley-red);
-            margin-top: 0;
-        }
-        
-        .alert-banner a {
-            color: var(--wiley-blue);
-            font-weight: 600;
-            text-decoration: none;
-        }
-        
-        /* Search */
-        .search-box {
-            background: var(--wiley-gray);
-            padding: 20px;
-            border-radius: 5px;
-            margin: 30px 0;
-        }
-        
-        .search-box h2 {
-            margin-top: 0;
-            color: var(--wiley-blue);
-        }
-        
-        .search-options {
+        .nav-desktop {
             display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
+            gap: 2rem;
         }
         
-        .search-options select, 
-        .search-options input {
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+        .nav-desktop a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
         }
         
-        .search-button {
-            background: var(--wiley-blue);
-            color: white;
+        .nav-desktop a:hover {
+            color: var(--secondary);
+        }
+        
+        .nav-desktop a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        .nav-desktop a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
             border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
+            color: var(--primary);
+            font-size: 1.5rem;
             cursor: pointer;
+        }
+        
+        /* Hero Banner */
+        .hero-banner {
+            background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.85)), 
+                        url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero-banner h1 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-banner p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        .alert-badge {
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.8rem 2rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Search Section */
+        .search-section {
+            background: var(--light-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .search-section h2 {
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+        }
+        
+        .search-filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .filter-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .filter-group select, 
+        .filter-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #E2E8F0;
+            border-radius: var(--border-radius);
+            font-family: 'Open Sans', sans-serif;
+            background: white;
+        }
+        
+        /* Results Table */
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            border-radius: var(--border-radius);
+        }
+        
+        .results-table th {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
             font-weight: 600;
         }
         
-        /* Timeline */
+        .results-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #E2E8F0;
+        }
+        
+        .results-table tr:nth-child(even) {
+            background: #F8FAFC;
+        }
+        
+        .results-table tr:hover {
+            background: #F1F5F9;
+        }
+        
+        .highlight {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+        
+        /* Timeline Section */
         .timeline-section {
-            margin: 40px 0;
+            margin: 4rem 0;
         }
         
         .timeline-section h2 {
-            color: var(--wiley-blue);
-            border-bottom: 2px solid var(--wiley-blue);
-            padding-bottom: 10px;
+            font-size: 1.75rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .timeline-section h2:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 50%;
+            height: 3px;
+            background: var(--accent);
         }
         
         .timeline {
             position: relative;
-            max-width: 100%;
-            margin: 20px 0;
+            padding-left: 40px;
+            margin: 2rem 0;
         }
         
-        .timeline::after {
+        .timeline:before {
             content: '';
             position: absolute;
-            width: 2px;
-            background-color: var(--wiley-blue);
+            left: 20px;
             top: 0;
             bottom: 0;
-            left: 50%;
-            margin-left: -1px;
+            width: 2px;
+            background: #E2E8F0;
         }
         
         .timeline-item {
-            padding: 10px 40px;
             position: relative;
-            width: 50%;
-            box-sizing: border-box;
+            padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+            margin-bottom: 1.5rem;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
         }
         
-        .timeline-item::after {
+        .timeline-date {
+            position: absolute;
+            left: -2.5rem;
+            top: 1.5rem;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        
+        .timeline-item:after {
             content: '';
             position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: white;
-            border: 3px solid var(--wiley-blue);
+            left: -2.65rem;
+            top: 2.3rem;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
-            top: 15px;
-            z-index: 1;
+            background: var(--primary);
+            border: 3px solid white;
         }
         
-        .left {
-            left: 0;
+        .timeline-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
         }
         
-        .right {
-            left: 50%;
-        }
-        
-        .right::after {
-            left: -10px;
-        }
-        
-        .left::after {
-            right: -10px;
-        }
-        
-        .timeline-content {
-            padding: 15px;
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .timeline-content h3 {
-            margin-top: 0;
-            color: var(--wiley-blue);
-        }
-        
-        /* CTA Form */
-        .cta-form {
-            background: var(--wiley-blue);
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary);
             color: white;
-            padding: 30px;
-            border-radius: 5px;
-            margin: 40px 0;
+            padding: 4rem 2rem;
+            border-radius: var(--border-radius);
+            margin: 4rem 0;
+            text-align: center;
         }
         
-        .cta-form h2 {
-            margin-top: 0;
+        .cta-section h2 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
         }
         
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 1.25rem;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 0.5rem;
             font-weight: 600;
         }
         
-        .form-group input, 
-        .form-group textarea, 
+        .form-group input,
+        .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 10px;
+            padding: 0.9rem;
             border: none;
-            border-radius: 4px;
+            border-radius: var(--border-radius);
+            font-family: 'Open Sans', sans-serif;
         }
         
-        .submit-btn {
-            background: var(--wiley-red);
+        .form-submit {
+            background: var(--secondary);
             color: white;
             border: none;
-            padding: 12px 25px;
-            border-radius: 4px;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 700;
             cursor: pointer;
-            font-weight: 600;
+            transition: var(--transition);
+            width: 100%;
+        }
+        
+        .form-submit:hover {
+            background: #B30000;
+            transform: translateY(-2px);
         }
         
         /* Footer */
         footer {
-            background: #222;
+            background: #001A33;
             color: white;
-            padding: 30px 0;
-            text-align: center;
-            font-size: 14px;
+            padding: 3rem 0;
         }
         
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo span {
+            color: var(--accent);
+        }
+        
+        .footer-links h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: #CBD5E1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #94A3B8;
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            z-index: 99;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            padding: 0.75rem 0;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid #E2E8F0;
+        }
+        
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+        
+        /* Responsive Styles */
         @media (max-width: 768px) {
-            .timeline::after {
-                left: 30px;
+            .header-container {
+                padding: 1rem;
             }
             
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 0;
+            .nav-desktop {
+                display: none;
             }
             
-            .timeline-item::after {
-                left: 20px;
+            .mobile-menu-btn {
+                display: block;
             }
             
-            .left::after, 
-            .right::after {
-                left: 20px;
+            .hero-banner {
+                padding: 3rem 1rem;
             }
             
-            .right {
-                left: 0;
+            .hero-banner h1 {
+                font-size: 2rem;
+            }
+            
+            .search-filters {
+                grid-template-columns: 1fr;
+            }
+            
+            .results-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .timeline-date {
+                left: -2.25rem;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.75rem;
+            }
+            
+            .timeline-item:after {
+                left: -2.4rem;
+                top: 2rem;
+            }
+            
+            .cta-section {
+                padding: 3rem 1rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="container logo-bar">
+        <div class="container header-container">
             <div class="logo">
-               <img src="law-firm-logo-vector-23219700.jpg" alt="Your Law Firm Logo">
+                <img src="law-firm-logo-vector-23219700.jpg" alt="Your Law Firm Logo">
                 <div class="logo-text">
                     <h1>Steel Tariff Tracker</h1>
-                    <p>Powered by Your Lawfirm's International Trade Practice</p>
+                    <p>Powered by Your Law Firm's Trade Practice</p>
                 </div>
             </div>
-            <div>
-                <a href="#" style="color: var(--wiley-blue); font-weight: 600;">Attorney Login</a>
-            </div>
+            <nav class="nav-desktop">
+                <a href="#search">Tariff Search</a>
+                <a href="#timeline">Policy Timeline</a>
+                <a href="#analysis">Custom Analysis</a>
+                <a href="#" style="color: var(--secondary);">Attorney Login</a>
+            </nav>
+            <button class="mobile-menu-btn">☰</button>
         </div>
     </header>
     
-    <div class="container">
-        <!-- Alert Banner -->
-        <div class="alert-banner">
-            <h3>Latest Update: February 11, 2025</h3>
-            <p>President Trump signed new Executive Orders expanding Section 232 tariffs on steel and aluminum. <a href="#">Read your lawfirm's full analysis →</a></p>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#search">Tariff Search</a>
+        <a href="#timeline">Policy Timeline</a>
+        <a href="#analysis">Custom Analysis</a>
+        <a href="#" style="color: var(--secondary);">Attorney Login</a>
+    </div>
+    
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="container">
+            <div class="alert-badge">LATEST UPDATE: FEB 2025</div>
+            <h1>Comprehensive Steel Tariff Intelligence for Global Trade Practices</h1>
+            <p>Monitor real-time tariff changes, analyze impacts, and guide clients with this authoritative legal resource.</p>
+            <a href="#search" class="btn">Explore Tariff Database</a>
         </div>
-        
-        <!-- Search Box -->
-        <div class="search-box">
-            <h2>Search Tariff Database</h2>
-            <div class="search-options">
-                <select>
-                    <option>HTS Code</option>
-                    <option>7208.10.00 - Hot-rolled steel sheets</option>
-                    <option>7210.70.30 - Galvanized steel wire</option>
-                </select>
-                <select>
-                    <option>Country</option>
-                    <option>China</option>
-                    <option>EU</option>
-                    <option>Canada</option>
-                </select>
-                <input type="date" placeholder="Effective Date">
+    </section>
+    
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Search Section -->
+        <section class="search-section" id="search">
+            <h2>Steel Tariff Search Tool</h2>
+            <p>Current Section 232 tariffs as of <strong>February 15, 2025</strong>:</p>
+            
+            <div class="search-filters">
+                <div class="filter-group">
+                    <label for="hts-code">HTS Code</label>
+                    <select id="hts-code">
+                        <option value="">All HTS Codes</option>
+                        <option value="7208.10.00">7208.10.00 - Hot-rolled steel sheets</option>
+                        <option value="7210.70.30">7210.70.30 - Galvanized steel wire</option>
+                        <option value="7219.11.00">7219.11.00 - Stainless steel sheet</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="country">Country/Region</label>
+                    <select id="country">
+                        <option value="">All Countries</option>
+                        <option value="china">China</option>
+                        <option value="eu">European Union</option>
+                        <option value="canada">Canada</option>
+                        <option value="mexico">Mexico</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="date">Effective Date</label>
+                    <input type="date" id="date" value="2025-02-15">
+                </div>
             </div>
-            <button class="search-button">Search Tariffs</button>
-        </div>
+            
+            <button class="btn" style="width: 100%;">Search Tariffs</button>
+            
+            <div style="overflow-x: auto; margin-top: 2rem;">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>HTS Code</th>
+                            <th>Product Description</th>
+                            <th>Country</th>
+                            <th>Base Rate</th>
+                            <th>Section 232</th>
+                            <th>Total Duty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>7208.10.00</td>
+                            <td>Hot-rolled steel sheets</td>
+                            <td>China</td>
+                            <td>5.0%</td>
+                            <td class="highlight">25.0%</td>
+                            <td class="highlight">30.0%</td>
+                        </tr>
+                        <tr>
+                            <td>7210.70.30</td>
+                            <td>Galvanized steel wire</td>
+                            <td>Germany</td>
+                            <td>3.5%</td>
+                            <td class="highlight">25.0%</td>
+                            <td class="highlight">28.5%</td>
+                        </tr>
+                        <tr>
+                            <td>7219.11.00</td>
+                            <td>Stainless steel sheet</td>
+                            <td>Canada</td>
+                            <td>2.0%</td>
+                            <td>0.0%</td>
+                            <td>2.0%</td>
+                        </tr>
+                        <tr>
+                            <td>7225.50.00</td>
+                            <td>Alloy steel bars</td>
+                            <td>Mexico</td>
+                            <td>1.8%</td>
+                            <td>0.0%</td>
+                            <td>1.8%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
         
-        <!-- Timeline -->
-        <div class="timeline-section">
-            <h2>Section 232 Tariff Timeline</h2>
+        <!-- Timeline Section -->
+        <section class="timeline-section" id="timeline">
+            <h2>Section 232 Steel Tariff Timeline</h2>
+            <p>Key policy developments and legal implications:</p>
+            
             <div class="timeline">
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <h3>March 2018</h3>
-                        <p>Initial Section 232 tariffs imposed: 25% on steel, 10% on aluminum.</p>
-                    </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Mar 2018</div>
+                    <h3>Initial Section 232 Tariffs Imposed</h3>
+                    <p>25% global tariff on steel imports under Section 232 of the Trade Expansion Act. Immediate exemptions for Canada and Mexico created complex compliance requirements.</p>
                 </div>
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <h3>January 2020</h3>
-                        <p>TRQs implemented for EU, UK, Japan; exemptions for Canada/Mexico.</p>
-                    </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Jan 2020</div>
+                    <h3>TRQ System Implementation</h3>
+                    <p>Tariff-rate quotas established for EU, UK, and Japan, replacing absolute tariffs. Created new administrative law challenges and exclusion request opportunities.</p>
                 </div>
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <h3>February 2025</h3>
-                        <p>New EOs eliminate exemptions, raise aluminum duties to 25%, expand product scope.</p>
-                    </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 2025</div>
+                    <h3>New Executive Orders</h3>
+                    <p>All remaining exemptions eliminated, duties maintained at 25%, and product scope expanded to include steel derivatives. Expected to generate significant litigation.</p>
                 </div>
             </div>
-        </div>
+        </section>
         
-        <!-- CTA Form -->
-        <div class="cta-form">
-            <h2>Need Custom Tariff Analysis?</h2>
-            <p>Your Law firm's trade attorneys provide strategic guidance on Section 232 compliance and exemptions.</p>
-            <form>
+        <!-- CTA Section -->
+        <section class="cta-section" id="analysis">
+            <h2>Need Custom Steel Tariff Analysis?</h2>
+            <p>Our international trade attorneys provide strategic guidance on Section 232 compliance, exemptions, and mitigation strategies.</p>
+            
+            <form class="contact-form">
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" placeholder="John Smith">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="John Smith" required>
                 </div>
                 <div class="form-group">
                     <label for="company">Company</label>
-                    <input type="text" id="company" placeholder="Acme Steel Co.">
+                    <input type="text" id="company" placeholder="Acme Steel Co." required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="john@acme.com">
+                    <input type="email" id="email" placeholder="john@acme.com" required>
                 </div>
                 <div class="form-group">
-                    <label for="inquiry">Inquiry</label>
-                    <textarea id="inquiry" rows="3" placeholder="Describe your tariff-related needs..."></textarea>
+                    <label for="inquiry">Your Inquiry</label>
+                    <textarea id="inquiry" rows="4" placeholder="Describe your steel tariff-related needs..." required></textarea>
                 </div>
-                <button type="submit" class="submit-btn">Request Legal Consultation</button>
+                <button type="submit" class="form-submit">Request Legal Consultation</button>
             </form>
-        </div>
-    </div>
+        </section>
+    </main>
     
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2025 Your Lawfirm LLP. All rights reserved. | <a href="#" style="color: white;">Privacy Policy</a></p>
-            <p>This turnkey domain and platform offer your organization an immediate competitive advantage—delivering authoritative aluminum tariff intelligence, enhancing client services, and positioning your firm as the premier resource in global trade compliance. | This website is intended to show how this domain can be an asset to your organization.Acquire this domain to instantly elevate your firm’s trade practice with a proven, client-ready resource steve@domainmont.co.ke  </p>
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">STEEL<span>TARIFFS</span>.COM</div>
+                    <p>A premium resource for international trade law professionals and steel industry executives.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Tariff Database</a></li>
+                        <li><a href="#">Policy Updates</a></li>
+                        <li><a href="#">Legal Analysis</a></li>
+                        <li><a href="#">Exemption Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Custom Tariff Analysis</a></li>
+                        <li><a href="#">Compliance Advisory</a></li>
+                        <li><a href="#">Litigation Support</a></li>
+                        <li><a href="#">Trade Policy Strategy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="tel:+12025551234">(202) 555-1234</a></li>
+                        <li><a href="mailto:trade@yourlawfirm.com">trade@yourlawfirm.com</a></li>
+                        <li><a href="#">Washington, DC</a></li>
+                        <li><a href="#">Attorney Login</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Your Law Firm LLP. All rights reserved. | <a href="#" style="color: #94A3B8;">Privacy Policy</a> | <a href="#" style="color: #94A3B8;">Terms of Use</a></p>
+                <p style="margin-top: 1rem; font-size: 0.8rem;">This turnkey domain and platform offer your organization an immediate competitive advantage—delivering authoritative steel tariff intelligence, enhancing client services, and positioning your firm as the premier resource in global trade compliance. Interested ?  steve@domainmont.com</p>
+            </div>
         </div>
     </footer>
+    
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobileMenu').classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
